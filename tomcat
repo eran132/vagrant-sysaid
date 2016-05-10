@@ -1,0 +1,21 @@
+#!/bin/bash
+# Tomcat init script for Linux.
+#
+# description: The Apache Tomcat servlet/JSP container.
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+JAVA_HOME=/usr/lib/jvm/java-7-oracle/
+CATALINA_HOME=/usr/share/tomcat
+export JAVA_HOME CATALINA_HOME
+start() {
+ sh /usr/share/tomcat/bin/startup.sh
+}
+
+stop() {
+ sh /usr/share/tomcat/bin/shutdown.sh
+}
+
+case $1 in
+  start|stop) $1;;
+  restart) stop; start;;
+  *) echo "Run as $0 <start|stop|restart>"; exit 1;;
+esac
