@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder '<drive letter>:\\<Absolute path of dir containing the license file>', '/license'
   config.vm.synced_folder './', '/vagrant/'
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
+    vb.memory = "4096"
     vb.cpus = "2"
   end
 end
